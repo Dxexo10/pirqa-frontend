@@ -15,8 +15,7 @@ no qué colores elegir.
 - Prohibido hex/px sueltos donde existe token.
 - El color de marca no representa estados. Los estados combinan icono + texto +
   color y usan tokens semánticos.
-- Tema claro/oscuro comparten tokens; no dupliques paletas ni condicionen color
-  por tema dentro de la vista.
+- El tema predeterminado es claro. Implementa oscuro solo si lo pide el brief o el usuario; deriva ambos modos de los mismos tokens semánticos y verifica el contraste por separado. No dupliques paletas ni condiciones por vista.
 
 ## Contraste
 
@@ -26,7 +25,7 @@ no qué colores elegir.
   foreground; nunca lo fuerces a gris.
 - Si un token no cumple, restringe su uso a texto grande/decorativo o corrige el
   token. Documenta la medición.
-- Verifica ambos temas: un par puede pasar en claro y fallar en oscuro.
+- Verifica los temas que el proyecto soporte: un par puede pasar en claro y fallar en oscuro.
 
 ## Tipografía
 
@@ -49,7 +48,8 @@ no qué colores elegir.
 
 ## Temas
 
-- Preferencia `light | dark | system` en storage con lectura segura.
+- Tema claro por defecto; solo añade `dark` si lo pide el brief o el usuario.
+- Preferencia `light | dark | system` en storage con lectura segura cuando aplique.
 - Aplica el tema antes del primer render (script inline) para evitar flash.
 - Escucha `prefers-color-scheme` y el evento `storage` si aplica.
 - Los pares críticos se prueban por tema.

@@ -2,7 +2,7 @@
 name: pirqa-frontend
 description: Actívala cuando construyas, refines o audites un módulo completo —lista, detalle, formulario, dashboard, gráficos o exportación— con datos, estados y tests. No la actives para cambios triviales de un solo componente, estilos sueltos o scripts.
 metadata:
-  version: 1.1.0
+  version: 1.2.0
 ---
 
 # Frontend Modules — playbook reutilizable
@@ -43,6 +43,7 @@ formularios HTML. No cambies las reglas de accesibilidad, copy ni craft.
 | Referencia | Léela cuando… |
 | --- | --- |
 | [`references/tokens.md`](references/tokens.md) | definas color, tipografía, temas, contraste o radios |
+| [`references/direccion-visual.md`](references/direccion-visual.md) | el proyecto no tenga marca, tokens ni sistema visual |
 | [`references/componentes.md`](references/componentes.md) | crees/reuses UI, badges, cards o primitivas |
 | [`references/patrones-de-pantalla.md`](references/patrones-de-pantalla.md) | construyas lista, filtros, detalle, formulario, dashboard o exportación |
 | [`references/datos-y-mutaciones.md`](references/datos-y-mutaciones.md) | definas contratos, hooks, queryKeys, mutaciones, errores o permisos |
@@ -53,9 +54,7 @@ formularios HTML. No cambies las reglas de accesibilidad, copy ni craft.
 | [`references/copy.md`](references/copy.md) | escribas textos de interfaz, errores o estados |
 | [`references/ejemplo-modulo-minimo.md`](references/ejemplo-modulo-minimo.md) | necesites un módulo mínimo completo como punto de partida |
 
-**Presets visuales opcionales** en [`presets/warm-editorial.md`](presets/warm-editorial.md). No son el default. Úsalos solo si
-el brief pide ese mundo visual; si no, el sistema sale de los tokens del
-proyecto. El preset `warm-editorial` está derivado del sistema visual de [Trazo](https://github.com/Dxexo10/trazo).
+**Presets visuales opcionales** en `presets/`: `warm-editorial`, `suave-pastel-sobrio` y `frio-de-trabajo`. Elige solo el que encaje con el dominio y el brief; ninguno es default. Si el proyecto ya tiene identidad, mandan sus tokens.
 
 **Dependencias externas (todas opcionales):**
 
@@ -85,15 +84,14 @@ Antes de escribir código, descubre y respeta:
 - Contratos de datos y convenciones de estado (URL, store, query client).
 - Comandos reales de lint, typecheck, tests y build (`package.json` o equivalente).
 
-Si falta contexto, inspecciona el código y el historial; no inventes marca,
-cifras ni versiones. Si una decisión de marca no se puede inferir, pregunta.
+Si falta contexto, inspecciona el código y el historial; no inventes cifras ni versiones. Si no hay marca, tokens ni sistema visual, trata el trabajo como Build y presenta primero la dirección de [`references/direccion-visual.md`](references/direccion-visual.md). Refine solo aplica si el proyecto ya tiene identidad visual.
 
 ## 3. Protocolo de trabajo
 
 | Tipo | Señales | Comportamiento |
 | --- | --- | --- |
 | **Build** | módulo nuevo, feature, CRUD, pantalla | Explora, planea, implementa completo, verifica |
-| **Refine** | "pulir", "arreglar", "se ve raro" | Preserva identidad; corrige en el nivel más estrecho |
+| **Refine** | "pulir", "arreglar", "se ve raro" sobre una identidad existente | Preserva identidad; corrige en el nivel más estrecho |
 | **Evaluate** | "revisa", "audita", "critica" | Diagnostica y prioriza; no edites |
 | **Adapt** | responsive, tema, densidad, i18n | Cambio estructural, no tipografía fluida |
 
@@ -105,8 +103,8 @@ Mientras construyes: un cambio, una verificación; agrupa las comprobaciones en
 una sola mirada al render; aplica el checklist sin narrarlo. Si el concepto está
 mal, dilo y propone rediseño en vez de disfrazarlo de polish.
 
-Antes de cerrar: lint, typecheck, tests y build; recorre la ruta con teclado y
-tamaños representativos; entrega un diff limpio; declara lo que no verificaste.
+Antes de cerrar: lint, typecheck, tests y build; recorre la ruta con teclado y tamaños representativos; entrega un diff limpio; declara lo que no verificaste.
+Si no puedes abrir el navegador, entrega una checklist manual de cinco pasos: Tab y foco; viewport de 320 px; tema soportado; estados vacío/sin resultados/error; comparación con la base.
 
 ### Refine y Evaluate
 
@@ -126,13 +124,10 @@ resto queda por debajo del mismo estándar.
 
 ## Modo ligero
 
-Úsalo solo si el encargo es una pantalla única, sin backend, un prototipo o un
-proyecto académico. El modo completo es el default en productos reales.
+Elige el modo por alcance: usa el modo ligero si el encargo cubre una sola pantalla sin backend ni persistencia. El modo completo es el default en los demás casos.
 
-- **Omite:** contratos y repositorios, hooks de datos (usa fixtures o estado
-  local), capa de dominio separada y E2E (opcional).
-- **Conserva:** tokens, estados de carga/vacío/error, accesibilidad básica,
-  responsive, copy y los bans.
+- **Omite:** contratos y repositorios, hooks de datos (usa fixtures o estado local), capa de dominio separada y E2E (opcional).
+- **Conserva:** tokens, estados de carga/vacío/error, accesibilidad básica, responsive, copy y los bans.
 - Mantén el alcance en un archivo o feature pequeño; sin over-engineering.
 
 **Definition of Done reducida:**
@@ -140,10 +135,11 @@ proyecto académico. El modo completo es el default en productos reales.
 - [ ] Tarea primaria completada.
 - [ ] Estados de carga, vacío, error y sin resultados.
 - [ ] Responsive 320/375/768 y teclado/foco.
-- [ ] Tokens usados; contraste AA.
+- [ ] Revisión de bans universales completada.
+- [ ] Contraste AA medido con script para texto/fondo; tokens usados.
+- [ ] Checklist manual de teclado: Tab, orden, foco visible y salida de overlays.
 - [ ] Copy claro y consistente.
 - [ ] Lint/typecheck/build pasan (si aplica).
-
 ## 4. Module Blueprint
 
 Checklist ordenado para crear un módulo. Adapta nombres y rutas a las
@@ -235,6 +231,11 @@ Resumen no negociable:
 
 ## 7. Sistema visual
 
+El tema predeterminado es **claro**. Implementa tema oscuro solo si lo pide el
+brief o el usuario; si se pide, derívalo de los mismos tokens semánticos y
+verifica su contraste por separado. Si el proyecto no tiene identidad visual,
+usa primero `references/direccion-visual.md`.
+
 - **Tokens semánticos, no valores sueltos.** Color, radio, sombra y tipografía
   salen del sistema del proyecto. Prohibido hex/px nuevos donde existe token.
 - Tipografía: respeta la pareja y la escala del proyecto; cifras con
@@ -284,8 +285,8 @@ carga diferida y mismo origen que el KPI.
 
 - Dominio puro primero; después datos; después componente/página; E2E por flujo
   crítico.
-- axe en la ruta principal de cada módulo, en tema claro y oscuro.
-- Capturas en 320/375/768/1280/1600 px y ambos temas.
+- axe en la ruta principal de cada módulo, en los temas que el proyecto soporte.
+- Capturas en 320/375/768/1280/1600 px y los temas soportados.
 - Presupuestos: chunk por ruta, INP < 200 ms, virtualización con umbral definido
   por el contrato, memo/selectores solo con medición.
 
@@ -327,7 +328,7 @@ de motion, todos los estados, copy del producto y cobertura del brief.
 - [ ] Tarea primaria completada sin ambigüedad.
 - [ ] Estados: default, hover, focus, active, disabled, loading, empty, error,
       success y sin permiso.
-- [ ] Responsive 320/375/768/1280/1600 y ambos temas verificados.
+- [ ] Responsive 320/375/768/1280/1600 y los temas soportados verificados.
 - [ ] Teclado, foco y lector de pantalla considerados; axe sin graves.
 - [ ] Contraste AA; tokens usados; cero valores visuales sueltos.
 - [ ] Copy consistente, acciones nombradas, errores con recuperación.

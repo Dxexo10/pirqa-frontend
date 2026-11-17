@@ -20,7 +20,7 @@
 ## Contraste
 
 - Texto normal ≥ 4.5:1; grande ≥ 3:1.
-- Verifica ambos temas y todos los estados (hover, focus, disabled, error).
+- Verifica los temas que el proyecto soporte y todos los estados (hover, focus, disabled, error).
 - Si un token falla, restringe su uso a texto grande/decorativo o corrige el
   token; documenta la medición.
 - El foco necesita contraste con su entorno además de visibilidad.
@@ -73,6 +73,6 @@
 
 ## Verificación
 
-- axe con tags WCAG A/AA en la ruta principal de cada módulo, en claro y oscuro;
+- axe con tags WCAG A/AA en la ruta principal de cada módulo, en los temas que el proyecto soporte (claro por defecto; oscuro solo si se solicita);
   cero violaciones `critical`/`serious`.
 - axe no sustituye teclado, contraste visual ni lector de pantalla.

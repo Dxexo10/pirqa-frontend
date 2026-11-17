@@ -3,7 +3,7 @@
   "owner": { "name": "Diego (Dxexo10)" },
   "metadata": {
     "description": "Pirqa: skills para construir módulos frontend completos.",
-    "version": "1.1.0"
+    "version": "1.2.0"
   },
   "plugins": [
     {

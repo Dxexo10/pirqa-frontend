@@ -20,7 +20,7 @@ Usa el inventario existente del repo; no crees un framework paralelo.
 - **Un test de página** por módulo: carga, vacío, error y filtros clave.
 - **Un E2E por flujo crítico** (crear, editar, archivar, revisar, exportar).
   Resetea el dataset antes de cada escenario.
-- **axe en la ruta principal de cada módulo nuevo, en tema claro y oscuro**;
+- **axe en la ruta principal de cada módulo nuevo, en los temas que el proyecto soporte**;
   agrégalo a la lista de rutas del test de accesibilidad.
 - En E2E usa el **adaptador mock determinista del proyecto** (el mismo dataset
   demo que consume la app), no mocks por test ni repositorios falsos por
@@ -46,7 +46,7 @@ No bajes los umbrales de cobertura para “pasar”.
 Para cambios de UI, captura y revisa:
 
 - Anchos: **320, 375, 768, 1280 y 1600 px** (320 valida reflow 1.4.10).
-- Temas: **claro y oscuro**.
+- Temas: **los que el proyecto soporte** (claro por defecto; oscuro solo si se solicita).
 - Estados: carga, vacío, error, éxito y filtros activos.
 - Copy largo y tablas densas.
 

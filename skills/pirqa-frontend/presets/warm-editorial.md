@@ -75,7 +75,7 @@ Notas de contraste:
 1. Mapea los roles de la tabla a los tokens del proyecto.
 2. Ajusta tipografía y radios a su escala si ya existe.
 3. No copies nombres de clases ni rutas de otro proyecto.
-4. Verifica contraste AA en ambos temas.
+4. El tema claro es el default; implementa oscuro solo si se solicita y verifica su contraste por separado.
 5. Conserva la marca y el logo del proyecto; este preset es solo atmósfera.
 
 ## Origen

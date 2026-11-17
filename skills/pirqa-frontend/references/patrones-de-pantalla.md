@@ -73,7 +73,17 @@ Stack: React Hook Form + Zod o equivalente.
   generales con la acción nombrada. Nunca pierdas lo escrito.
 - **Permisos:** si no puede editar, no renderices el formulario; explica la vía.
 
-## 5. Dashboard
+## 5. Formulario nativo sin librería
+
+Usa este mínimo cuando el proyecto no incluya una librería de formularios:
+
+- Label visible asociado a cada control; aprovecha `required`, `type`, `min`, `max`, `pattern` nativos cuando correspondan.
+- Al detectar error, establece `aria-invalid="true"` y conecta el mensaje mediante `aria-describedby`; quita `aria-invalid` al corregir.
+- Al enviar, valida los campos y muestra un único resumen accesible con enlaces a los campos inválidos; enfoca el resumen o el primer campo inválido.
+- No asignes `role="alert"` a cada error de campo; resérvalo para el resumen de envío.
+- Conserva los valores, anuncia la recuperación y no dependas solo del color.
+
+## 6. Dashboard
 
 - Un KPI destacado como ancla visual; el resto en tarjetas del sistema.
 - Máximo 4 KPIs por fila.
@@ -82,7 +92,7 @@ Stack: React Hook Form + Zod o equivalente.
 - Estado vacío cuando no hay datos para el filtro.
 - Gráficos con carga diferida y skeleton de la altura final.
 
-## 6. Exportación y reportes
+## 7. Exportación y reportes
 
 - **Misma función de derivación** que la pantalla: un `ReportDocument` puro
   alimenta resumen, vista previa, CSV, XLSX y PDF.
