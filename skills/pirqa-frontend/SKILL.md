@@ -13,6 +13,8 @@ No entregues pantallas a medias ni deuda visual silenciosa.
 
 1. **El brief, el producto y su marca mandan** sobre tu gusto y sobre los
    defaults de categoría.
+   La paleta existente o solicitada por el usuario manda; no añadas acentos
+   de otra familia por gusto.
 2. **Verifica mirando el render** en los tamaños reales; un test no sustituye el juicio.
 3. **Termina**: si un estado, breakpoint, tema o caso límite está en alcance, se entrega.
 
@@ -43,8 +45,8 @@ formularios HTML. No cambies las reglas de accesibilidad, copy ni craft.
 | Referencia | Léela cuando… |
 | --- | --- |
 | [`references/tokens.md`](references/tokens.md) | definas color, tipografía, temas, contraste o radios |
-| [`references/direccion-visual.md`](references/direccion-visual.md) | el proyecto no tenga marca, tokens ni sistema visual |
-| [`references/componentes.md`](references/componentes.md) | crees/reuses UI, badges, cards o primitivas |
+| [`references/direccion-visual.md`](references/direccion-visual.md) | definas o completes la identidad visual cuando falte o esté incompleta |
+| [`references/componentes.md`](references/componentes.md) | definas shell, navegación, componentes, estados o primitivas |
 | [`references/patrones-de-pantalla.md`](references/patrones-de-pantalla.md) | construyas lista, filtros, detalle, formulario, dashboard o exportación |
 | [`references/datos-y-mutaciones.md`](references/datos-y-mutaciones.md) | definas contratos, hooks, queryKeys, mutaciones, errores o permisos |
 | [`references/accesibilidad.md`](references/accesibilidad.md) | revises foco, teclado, ARIA, contraste, touch o motion |
@@ -102,6 +104,12 @@ actual. Si no puedes ejecutarla, dilo.
 Mientras construyes: un cambio, una verificación; agrupa las comprobaciones en
 una sola mirada al render; aplica el checklist sin narrarlo. Si el concepto está
 mal, dilo y propone rediseño en vez de disfrazarlo de polish.
+
+Antes de construir UI, define una identidad visual ligada al producto y a la tarea.
+Usa los patrones existentes si tienen carácter; no los reemplaces por una plantilla.
+Si no hay sistema visual, presenta primero la dirección de
+[`references/direccion-visual.md`](references/direccion-visual.md). Comprueba que la
+composición y la navegación expresen la identidad más allá del logo y el color.
 
 Antes de cerrar: lint, typecheck, tests y build; recorre la ruta con teclado y tamaños representativos; entrega un diff limpio; declara lo que no verificaste.
 Si no puedes abrir el navegador, entrega una checklist manual de cinco pasos: Tab y foco; viewport de 320 px; tema soportado; estados vacío/sin resultados/error; comparación con la base.
@@ -244,7 +252,7 @@ usa primero `references/direccion-visual.md`.
   **o** sombra, nunca ambos como “ghost card”).
 - Estados: color + icono + texto. El color de marca no representa estados.
 - Tema claro/oscuro comparten tokens; no dupliques paletas dentro de la vista.
-- Contraste AA: 4.5:1 texto normal, 3:1 texto grande.
+- Contraste AA: mide cada pareja texto/fondo en default, hover, foco, activo, seleccionado y disabled; conserva 4.5:1 en texto normal y 3:1 en texto grande.
 - Movimiento: 150–250 ms, comunica estado, un solo momento autoral.
 - Superficies del navegador: selección, caret, scrollbars, focus ring,
   `underline-offset`, autofill y `color-scheme` desde la paleta.
@@ -295,6 +303,8 @@ carga diferida y mismo origen que el KPI.
 Verifica en una sola mirada al render: contraste, profundidad, espaciado (más
 aire arriba de un encabezado), medida 65–75ch, escala y pesos, un solo momento
 de motion, todos los estados, copy del producto y cobertura del brief.
+Después haz una pasada de sustracción: retira ornamentos que no mejoren la
+comprensión, la orientación ni la tarea.
 
 **Bans universales:**
 

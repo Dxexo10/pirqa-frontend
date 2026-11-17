@@ -32,6 +32,13 @@
   `overflow: hidden/auto` se recorta. Usa portal, `position: fixed` o `dialog`.
 - La misma acción tiene el mismo nombre, icono y forma en toda la app.
 
+## Shell y navegación
+
+- Elige la navegación después de entender la arquitectura de información, las tareas frecuentes y los dispositivos. Usa navegación lateral, superior, rail o contextual según el producto; no asumas sidebar como plantilla.
+- Si el shell ya tiene una forma propia, consérvala y úsala como patrón del producto. Si aún no hay marca, refleja la tesis visual en el símbolo y en la organización del shell; no resuelvas identidad solo cambiando el color o poniendo una inicial en un recuadro.
+- Mantén visible y coherente la ubicación activa, los grupos y la relación entre navegación y contenido. Coloca perfil, apariencia y configuración donde el modelo de uso los haga fáciles de encontrar; no añadas controles de muestra.
+- En móvil, transforma la navegación para la tarea táctil sin reducirla a una versión comprimida del escritorio.
+- En grupos laterales expandibles, distingue el padre abierto con una superficie redondeada y sus hijos con sangría y una guía sutil. Marca cada submódulo con un punto: usa el acento ya definido por la interfaz para el activo y un tono de la misma paleta para los demás; no inventes un nuevo color para el punto. Combina el indicador con texto distinguible y `aria-current`, nunca dependas solo del color. Adapta o descarta el patrón si la identidad o el espacio del producto no lo justifican.
 ## Tarjetas y superficies
 
 - Radio y borde desde tokens.

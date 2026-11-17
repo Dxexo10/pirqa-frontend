@@ -21,6 +21,8 @@ no qué colores elegir.
 
 - Texto normal ≥ 4.5:1; texto grande ≥ 3:1.
 - Placeholder y texto de apoyo ≥ 4.5:1.
+- Mide por separado cada combinación de tinta y superficie en `default`, `hover`, `focus-visible`, `active`, `selected` y `disabled`. Al cambiar el fondo, revisa también el texto y los iconos: no heredes una tinta que pierda contraste.
+- Mantén 4.5:1 para texto normal y 3:1 para texto grande; contornos de foco e indicadores gráficos esenciales deben alcanzar 3:1 frente a las superficies adyacentes.
 - Sobre superficies de color, tinta el texto secundario desde ese tono o el
   foreground; nunca lo fuerces a gris.
 - Si un token no cumple, restringe su uso a texto grande/decorativo o corrige el
@@ -57,6 +59,7 @@ no qué colores elegir.
 ## Movimiento y `prefers-reduced-motion`
 
 - 150–250 ms en hover, apertura, filtros, feedback y cambio de estado.
+- Prioriza movimiento que responde a una acción. Usa movimiento sin acción previa solo si aclara jerarquía o relación, y limita las entradas decorativas a un momento puntual.
 - El movimiento comunica estado; no decora ni coreografía la carga.
 - `prefers-reduced-motion` exige un equivalente sin movimiento: color, opacidad,
   borde o estado instantáneo. El default debe ser el estado final visible.
