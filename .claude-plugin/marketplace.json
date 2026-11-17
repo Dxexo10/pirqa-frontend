@@ -1,0 +1,17 @@
+{
+  "name": "pirqa",
+  "owner": { "name": "Diego (Dxexo10)" },
+  "metadata": {
+    "description": "Pirqa: skills para construir módulos frontend completos.",
+    "version": "1.1.0"
+  },
+  "plugins": [
+    {
+      "name": "pirqa-frontend",
+      "description": "Playbook de diseño e ingeniería para módulos frontend: listas, formularios, dashboards, accesibilidad y testing.",
+      "source": "./",
+      "strict": false,
+      "skills": ["./skills/pirqa-frontend"]
+    }
+  ]
+}
