@@ -14,7 +14,7 @@ las reglas de comunicación, no la implementación.
 - **Gradientes de relleno:** permitidos solo como decoración bajo una línea o
   barra (del color de la serie al fondo, opacidad baja). No son la codificación
   de la categoría, no sustituyen a la leyenda, no se usan en texto ni en el
-  trazo principal, y deben ser legibles en ambos temas. Un gradiente que
+  [Trazo](https://github.com/Dxexo10/trazo) principal, y deben ser legibles en ambos temas. Un gradiente que
   distingue series o comunica un valor está prohibido.
 - **Ejes y unidades visibles:** eje Y con formato local y unidad (`$`, `%`,
   miles). Sin decimales donde no aportan. Grid discreto, solo horizontal.

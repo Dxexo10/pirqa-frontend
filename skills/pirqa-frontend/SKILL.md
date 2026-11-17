@@ -55,7 +55,7 @@ formularios HTML. No cambies las reglas de accesibilidad, copy ni craft.
 
 **Presets visuales opcionales** en [`presets/warm-editorial.md`](presets/warm-editorial.md). No son el default. Úsalos solo si
 el brief pide ese mundo visual; si no, el sistema sale de los tokens del
-proyecto. El preset `warm-editorial` está derivado del sistema visual de Trazo.
+proyecto. El preset `warm-editorial` está derivado del sistema visual de [Trazo](https://github.com/Dxexo10/trazo).
 
 **Dependencias externas (todas opcionales):**
 
@@ -63,7 +63,7 @@ proyecto. El preset `warm-editorial` está derivado del sistema visual de Trazo.
 | --- | --- | --- |
 | `impeccable` | Úsala para `critique`, `audit`, `polish`, `adapt`, `animate`, `typeset`, `clarify` y `harden`. | Aplica el craft floor y una autocrítica con el triaje P0–P3. |
 | `frontend-design` | Úsala para explorar un mundo visual. | Deriva la dirección del brief y los tokens; no inventes una marca nueva. |
-| `trazo-brand` | Aporta tokens, rutas y labels de Trazo. | Lee `PRODUCT.md`/`DESIGN.md`/tokens y detecta el gold standard del repo. |
+| `trazo-brand` | Aporta tokens, rutas y labels de [Trazo](https://github.com/Dxexo10/trazo). | Lee `PRODUCT.md`/`DESIGN.md`/tokens y detecta el gold standard del repo. |
 | Skill de proyecto | Aporta el contrato de marca y arquitectura. | Usa la documentación y el código existentes como contrato. |
 
 Pásales el contexto del proyecto. Si contradicen una regla explícita del

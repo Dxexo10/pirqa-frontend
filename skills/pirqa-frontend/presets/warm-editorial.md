@@ -80,5 +80,5 @@ Notas de contraste:
 
 ## Origen
 
-Derivado del sistema visual de Trazo, usado como caso de estudio. No es una
+Derivado del sistema visual de [Trazo](https://github.com/Dxexo10/trazo), usado como caso de estudio. No es una
 marca ni un default; es una atmósfera entre otras posibles.
